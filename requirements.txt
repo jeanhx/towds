@@ -1,0 +1,4 @@
+Django==1.8.2
+Magic-file-extensions==0.2
+wsgiref==0.1.2
+
