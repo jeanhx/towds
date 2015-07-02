@@ -4,18 +4,13 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.contrib import admin
-from core.views import *
+from .views import *
 
 admin.autodiscover()
 
 
 urlpatterns = patterns('',
-
     url(r'^$', Home, name='home'),
-    url(r'^$', include('core.urls')),
-    url(r'^api/', include('towds_api.urls')),
-    url(r'^myaccount/', include('profile.urls')),
-    #url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='auth_logout'),
-    #url(r'^admin/', include(admin.site.urls)),
 )
+
 
