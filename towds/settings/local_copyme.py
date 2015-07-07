@@ -19,3 +19,7 @@ DEBUG = True
 #     }
 # }
 
+ALLOWED_HOSTS = [
+    'localhost', # Allow domain and subdomains
+]
+

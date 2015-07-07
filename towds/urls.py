@@ -11,8 +11,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    url(r'^$', Home, name='home'),
     url(r'^$', include('core.urls')),
+    url(r'^ad/', include('ads.urls')),
     url(r'^api/', include('towds_api.urls')),
     url(r'^myaccount/', include('profile.urls')),
     #url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='auth_logout'),
