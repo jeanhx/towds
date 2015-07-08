@@ -11,6 +11,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     #url(r'^/$', Listing, name='listing'),
+    url(r'^/(?P<listing_id>[\w-]+)/$', 'get_listing', name='get_listing'),
 )
 
 
