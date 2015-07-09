@@ -16,3 +16,7 @@ def get_listing(request, listing_id):
 
     return HttpResponse(Listing)
 
+def get_listings(request):
+    listings = Listing.objects.filter(lister=request.user)
+    
+    return HttpRespons(listings)
