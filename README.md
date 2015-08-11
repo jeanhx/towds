@@ -23,7 +23,9 @@ Files and directory:
 
 How to start:
 
-    $ copy towds/settings/local_copyme.py to local.py and enter db info and django secretkey
-    $ python manage.py runserver --settings=towds.settings.local
-    $ go to http://127.0.0.1:8000/ in a browser
+    $ copy towds/settings_copyme.py to towds/settings.py and enter db info and django secretkey
+    $ python manage.py syncdb
+    $ python manage.py runserver
+
+Finally, go to http://127.0.0.1:8000/ in a browser
 

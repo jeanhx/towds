@@ -1,11 +1,9 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.gis.db import models as gis_models
-
-from django.conf import settings
+from model_utils import Choices
 from django.utils.translation import ugettext as _
 from django_extensions.db.models import TimeStampedModel
-
-from towds.profile.models import Lister
 
 
 class Listing(TimeStampedModel):
@@ -16,13 +14,13 @@ class Listing(TimeStampedModel):
         ('shut_down', _('Shut Down'))
     )
 
-    lister = models.ForeignKey(Lister)
+    lister = models.ForeignKey('profile.models.Lister')
     title = models.CharField(max_length=150)
     description = models.TextField()
     start_time = models.TimeField()
-    end_time = modesl.TimeField()
+    end_time = models.TimeField()
     status = models.CharField(max_length=50, null=True, blank=True, choices=STATUS)
-    address = models.ForeignKey(Address)
+    address = models.ForeignKey('Address')
     lon = models.FloatField()
     lat = models.FloatField()
 
@@ -34,8 +32,8 @@ class Listing(TimeStampedModel):
 
 class Zipcode(gis_models.Model):
     code = models.CharField(max_length=5)
-    poly = models.PolygonField()
-    objects = models.GeoManager()
+    poly = gis_models.PolygonField()
+    objects = gis_models.GeoManager()
 
 
 class Address(gis_models.Model):
