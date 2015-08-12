@@ -12,13 +12,13 @@ Run requirements to install required python extensions
 
 Files and directory:
 
-	ads/		Listings live here
-	core/		Base application
-	profile/	User profile info lives here
-	requirements	Django python required extensions
-	towds/		Towds configurations
-	towds_api/	API REST backend
-	README		This file
+	ads/			Listings live here
+	core/			Base application
+	profile/		User profile info lives here
+	requirements		Django python required extensions
+	towds/			Towds configurations
+	towds_api/		API REST backend
+	README			This file
 
 
 How to start:

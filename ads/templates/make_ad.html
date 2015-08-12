@@ -5,7 +5,7 @@
 
 <body>
 <!-- Page Content -->
-{% if form.is_valid %} <div class="row alert-success">Listing saved</div>{% endif %}
+{% if form.is_valid %} <div class="block-center text-center alert-success">Listing saved (<a href="/ad/show/{{ id }}">view here</a>)</div>{% endif %}
 
 <div class="container-fluid row">
     <form action="" method="POST">

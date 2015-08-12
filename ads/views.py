@@ -17,6 +17,7 @@ def make_listing(request):
         if form.is_valid():
             listing = form.save(commit=False)
             listing.save()
+            context['id'] = listing.id
 
     else:
         form = ListingForm()

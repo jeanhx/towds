@@ -2,12 +2,12 @@
 {% load i18n %}
 
 {% block content %}
-    <body>
+    <body onload="initialize()">
     <style>
         html, body, #map-canvas {
             height: 500px;
             width: 600px;
-            margin: 0;
+            margin-left: 10px;
             padding: 0;
         }
     </style>
@@ -16,7 +16,7 @@
         function initialize() {
             var myLatlng = new google.maps.LatLng({{ ad.lat }},{{ ad.lon }});
             var mapOptions = {
-                zoom: 19,
+                zoom: 13,
                 center: myLatlng
             }
 

@@ -16,6 +16,6 @@ urlpatterns = patterns('',
     url(r'^api/', include('towds_api.urls')),
     url(r'^dash/', include('profile.urls')),
     #url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='auth_logout'),
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^admin/', include(admin.site.urls)),
 )
 
