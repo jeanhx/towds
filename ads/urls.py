@@ -10,8 +10,8 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    #url(r'^/$', Listing, name='listing'),
-    url(r'^/(?P<listing_id>[\w-]+)/$', 'get_listing', name='get_listing'),
+    url(r'^create/$', make_listing, name='make_listing'),
+    url(r'^show/(?P<id>\w+)/$', show_listing, name='show_listing'),
 )
 
 

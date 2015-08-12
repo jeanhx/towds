@@ -12,5 +12,3 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', Home, name='home'),
 )
-
-

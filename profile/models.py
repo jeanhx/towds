@@ -6,9 +6,9 @@ from django_extensions.db.models import TimeStampedModel
 
 class Lister(TimeStampedModel):
     user = models.ForeignKey(User, null=True, blank=True, default=None)
-    name = models.CharField(max_length=255)
-    email = models.EmailField(verbose_name='email address', max_length=255)
-    home_address = models.ForeignKey('ads.models.Address')
+    name = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(verbose_name='email address', max_length=255, null=True, blank=True)
+    home_address = models.ForeignKey('ads.models.Address', null=True, blank=True)
 
     class Meta:
         db_table = 'lister'

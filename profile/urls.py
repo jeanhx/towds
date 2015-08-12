@@ -10,7 +10,7 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    #url(r'^/$', Base, name='base'),
+    url(r'^$', Dash, name='dash'),
 )
 
 

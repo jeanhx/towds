@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<body>
+<!-- Page Content -->
+{% if form.is_valid %} <div class="row alert-success">Listing saved</div>{% endif %}
+
+<div class="container-fluid row">
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Submit" />
+    </form>
+</div>
+
+
+</body>
+{% endblock %}

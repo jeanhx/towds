@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <body>
+    <style>
+        html, body, #map-canvas {
+            height: 500px;
+            width: 600px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+        function initialize() {
+            var myLatlng = new google.maps.LatLng({{ ad.lat }},{{ ad.lon }});
+            var mapOptions = {
+                zoom: 19,
+                center: myLatlng
+            }
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: ''
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <h1 class="center-block text-center">
+        {{ ad.title }} - {{ ad.status }}
+    </h1>
+    <div class="row">
+        <div class="col-lg-8 m0 p0">{{ ad.description }}</div>
+        <div class="col-lg-4 m0 p0" id="map-canvas"></div>
+    </div>
+  </body>
+{% endblock %}

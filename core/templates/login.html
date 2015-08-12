@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+  <body>
+    <h1 class="center-block text-center">
+        Greetings User
+    </h1>
+    <h3 class="center-block text-center">Feel free to enter your Lat, Lon to get started</h3>
+
+    <form class="form-inline center-block text-center" role="form" action="/dash/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Latitude:</label>
+            <input placeholder="Enter Latitude" class="form-control" name="lat">
+        </div>
+        <div class="form-group">
+            <label>Longitude:</label>
+            <input placeholder="Enter Longitude" class="form-control" name="lon">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div class="row text-center">or add a <a href="/ad/create">new listing</a></div>
+
+  </body>
+{% endblock %}

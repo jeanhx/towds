@@ -1,11 +1,29 @@
 import json
-from django.http import HttpResponse
-from googlemaps import GoogleMaps
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from ads.models import Listing
 
-def json_error(msg):
-	return "{\"error\":\"%s\"}" % msg
 
-def Base(request):
-    gmaps = GoogleMaps(API_KEY)
-    lat, lng = gmaps.address_to_latlng(address)
-    return HttpResponse("User Lat,Lon: %s,%s" % (lat,lng))
+
+def Dash(request):
+
+    if request.POST:
+        template_name = 'dash.html'
+        context = {'template_title': 'towds---------- dashboard~'}
+
+        input_lat = request.POST['lat']
+        input_lon = request.POST['lon']
+
+        context['lat'] = input_lat
+        context['lon'] = input_lon
+
+        Listing.objects.filter(lon__gt=(input_lon-1.0),
+                               lon__lt=(input_lon+1.0),
+                               lat__gt=(input_lat-1.0),
+                               lat__lt=(input_lat+1.0))[:10]
+
+        return render(request, template_name, context)
+
+    else:
+        return HttpResponseRedirect('/')
+
