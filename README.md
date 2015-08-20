@@ -8,7 +8,7 @@ Requirement:
 
 If using a database besides SQLite3 install the plugins listed here - https://docs.djangoproject.com/en/dev/ref/contrib/gis/install/geolibs/
 
-Run requirements to install required python extensions 
+Run 'pip install -r requirements.txt' to install required python extensions 
 
 Files and directory:
 
